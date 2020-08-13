@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Un nouveau Plant</h1>
+  <div class="row">
+
+    <%#= simple_form_for :plant_tag, url: plant_plant_tags_path(@plant), method: :post do |f| %>
+    <%= simple_form_for [@plant, @plant_tag] do |f| %>
+      <%#= f.input :tag, collection: Tag.all, input_html: { multiple: true }, include_hidden: false %>
+      <%= f.input :tag, collection: Tag.all %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
